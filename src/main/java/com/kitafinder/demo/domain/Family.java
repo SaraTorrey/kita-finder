@@ -1,20 +1,14 @@
 package com.kitafinder.demo.domain;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 
 @Entity
-public class Family {
+public class Family extends BaseEntity {
 
-        @Id
-        @GeneratedValue
-        public Long id;
         public String name;
         public String mother;
         public String father;
         public String children;
-
 
         @Override public String toString() {
 
@@ -23,5 +17,4 @@ public class Family {
                        ". Father's name is " + father +
                        ". Their children are " + children + ".";
         }
-
 }

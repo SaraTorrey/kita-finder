@@ -1,14 +1,18 @@
-package com.kitafinder.demo;
+package com.kitafinder.demo.service;
 
 import com.kitafinder.demo.domain.Family;
 import com.kitafinder.demo.repository.FamilyRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.Arrays;
+import java.util.List;
+
 import javax.annotation.PostConstruct;
 
 @Service
-public class ServiceFamily {
+public class FamilyService {
 
     @Autowired
     FamilyRepository familyRepository;
@@ -35,5 +39,25 @@ public class ServiceFamily {
         System.out.println( familyFay );
 
         System.out.println( familyRepository.findAll() );
+    }
+
+    public List<Contact> getContacts() {
+
+        return Arrays.asList( new Contact( "Dan", "t" ),
+                              new Contact( "Sara", "t" ),
+                              new Contact( "Owen", "t" ) );
+
+    }
+
+    public class Contact {
+
+        public String firstName;
+        public String lastName;
+
+        public Contact( String firstName, String lastName ) {
+
+            this.firstName = firstName;
+            this.lastName = lastName;
+        }
     }
 }

@@ -13,7 +13,8 @@ public class KitaFinder {
     @Autowired
     KitaRepository kitaRepository;
 
-    @GetMapping("/findAllKitas")
+
+    @GetMapping( "/findAllKitas" )
     public Iterable<Kita> findAllKitas() {
 
         return kitaRepository.findAll();

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Kita Photos</title>
+    </head>
+    <body>
+        <h1>Photos of the Kitas in the Area</h1>
+        <table>
+            <tr th:each="kita: ${kitas}" xmlns:th="http://www.w3.org/1999/xhtml">
+                <td th:text="${kita.name}" />
+                <td th:text="${kita.location}" />
+                <td th:text="${kita.type}"/>
+
+                <td>
+                    <div th:each="photoURL: ${kita.photoURLs}">
+                        <img th:attr="src= ${photoURL}">
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

@@ -2,12 +2,14 @@ package com.kitafinder.demo.domain;
 
 import com.kitafinder.demo.KitaType;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 
 @Entity
-public class Kita {
+public class Kita extends BaseEntity{
 
     public Kita() {
 
@@ -18,13 +20,13 @@ public class Kita {
         this.name = name;
     }
 
-    @Id
-    @GeneratedValue
-    public Long id;
 
     public String name;
     public String location;
     public KitaType type;
+
+    @ElementCollection
+    public List<String> photoURLs = new ArrayList<>();
 
 
     @Override public String toString() {

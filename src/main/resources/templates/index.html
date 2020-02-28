@@ -1,1 +1,26 @@
-<h1>fdsfdfa</h1>
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Index</title>
+    </head>
+    <body>
+        <table>
+            <tr th:each="family: ${families}" xmlns:th="http://www.w3.org/1999/xhtml">
+                <td th:text="${family.id}" />
+                <td th:text="${family.name}" />
+                <td th:text="${family.mother}" />
+                <td th:text="${family.father}" />
+                <td th:text="${family.children}" />
+            </tr>
+        </table>
+
+        <table>
+            <tr th:each="contact: ${contacts}" xmlns:th="http://www.w3.org/1999/xhtml">
+                <td th:text="${contact.firstName}" />
+                <td th:text="${contact.lastName}" />
+            </tr>
+        </table>
+    </body>
+</html>
